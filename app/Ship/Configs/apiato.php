@@ -39,7 +39,7 @@ return [
         | API Prefix
         |--------------------------------------------------------------------------
         */
-        'prefix'                  => '/',
+        'prefix'                  => env('API_PREFIX', '/'),
 
         /*
         |--------------------------------------------------------------------------
@@ -163,6 +163,39 @@ return [
         |
         */
         'use-etag' => true,
+
+        /*
+        |--------------------------------------------------------------------------
+        | Automatically Apply RequestCriteria
+        |--------------------------------------------------------------------------
+        |
+        | This option describes, if the RequestCriteria is automatically applied
+        | for all Requests to the API. If you "concatenate" several repositories in
+        | one request, this may cause issues, as the RequestCriteria is applied
+        | TO ALL Repositories!
+        |
+        | Default Value: true (it is automatically applied to ALL Repositories)
+        |
+        */
+        'automatically-apply-request-criteria' => env('API_REQUEST_APPLY_REQUEST_CRITERIA', true),
     ],
+
+    'logging' => [
+
+        /*
+        |--------------------------------------------------------------------------
+        | Log Apiato Wrong Caller Style
+        |--------------------------------------------------------------------------
+        |
+        | This option describes, if a "wrong" Apiato Call Style should be logged.
+        | The preferred style is Apiato::call('Container@Action/Task'), however,
+        | one may use Apiato::call(Your\Full\Classname::class) as well.
+        |
+        | Default Value: true ("Violations" will be logged)
+        |
+        */
+        'log-wrong-apiato-caller-style' => true,
+
+    ]
 
 ];

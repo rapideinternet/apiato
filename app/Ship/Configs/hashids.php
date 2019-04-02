@@ -1,5 +1,16 @@
 <?php
 
+/*
+ * This file is part of Laravel Hashids.
+ *
+ * (c) Vincent Klaiber <hello@vinkla.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+declare(strict_types=1);
+
 return [
 
     /*
@@ -29,7 +40,7 @@ return [
     'connections' => [
 
         'main' => [
-            'salt'     => env('APP_KEY'),
+            'salt'     => env('HASH_ID_KEY', env('APP_KEY')),
             'length'   => env('HASH_ID_LENGTH', 32),
             'alphabet' => '1234567890abcdefghijklmnopqrstuvwxyz',
         ],

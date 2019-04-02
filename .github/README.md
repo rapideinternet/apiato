@@ -1,6 +1,6 @@
 # Apiato
 
-<h3 align="center">Build great API's faster | with PHP and laravel 5.5</h3>
+<h3 align="center">Build great API's faster | with PHP and laravel 5.6</h3>
 
 <p align="center">
    <img src="https://github.com/apiato/documentation/blob/master/images/apiato-icon-medium.png" alt="Apiato Logo"/>
@@ -92,7 +92,7 @@ Alternatively, you can build it using the [MVC](http://docs.apiato.io/getting-st
 
 <p align="center">
 	<a href="https://slackin-mezlsumyvc.now.sh/">
-	   <img src="https://s19.postimg.org/h7pvzy9ar/Slack-i_OS-icon.png" alt="Apiato SLACK"/>
+	   <img src="https://s19.postimg.cc/h7pvzy9ar/Slack-i_OS-icon.png" alt="Apiato SLACK"/>
 	</a>
 </p>
 

@@ -3,10 +3,18 @@
 ## [Unreleased]
 
 ### Added
+- Laravel 5.6
 - Added the `TinkerServiceProvider` to `core` in order to allow for using `php artisan tinker` from the console.
+- Added a `PaymentTransaction` in order to log all `Payments`.
+- There is a new configuration flag (`apiato.requests.automatically-apply-request-criteria`) to disable automatically 
+adding the `RequestCriteria` to all `Repository` instances. This is known to cause issues.
+- In addition to this config flag, there is a new `addRequestCriteria` and `removeRequestCriteria` function 
+for `Tasks` and `Actions` (automatically applied via the `HasRequestCriteriaTrait`) that allows adding/removing
+the `RequestCriteria` for specific `Repositories`. This can easily be achieved via the `MagicCall` approach! (see the `GetAllUsersAction` for an example!)
 
 ### Changed
-- Nothing.
+- Adapted the existing `ChargerTasks` for `Stripe` and `Wepay` in order to follow the `PaymentTransaction` approach.
+- Rename `Socialauth` container to `SocialAuth`
 
 ### Fixed
 - Fixed Issue in `CountCriteria` [PR](https://github.com/apiato/apiato/pull/363)

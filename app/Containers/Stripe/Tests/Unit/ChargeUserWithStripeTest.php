@@ -11,6 +11,9 @@ use Illuminate\Support\Facades\App;
 /**
  * Class ChargeUserWithStripeTest
  *
+ * @group stripe
+ * @group unit
+ *
  * @author  Mahmoud Zalt  <mahmoud@zalt.me>
  */
 class ChargeUserWithStripeTest extends TestCase
@@ -18,6 +21,9 @@ class ChargeUserWithStripeTest extends TestCase
 
     use MockablePaymentsTrait;
 
+    /**
+     * @test
+     */
     public function testChargeUserWithStripe()
     {
         // Mock the payments
@@ -37,8 +43,8 @@ class ChargeUserWithStripeTest extends TestCase
         // Start the test:
         $account = $user->paymentAccounts->first();
 
-        $stripeResponse = $user->charge($account, $amount);
+        $transaction = $user->charge($account, $amount);
 
-        $this->assertEquals($stripeResponse['payment_method'], 'stripe');
+        $this->assertEquals($transaction->gateway, 'Stripe');
     }
 }
